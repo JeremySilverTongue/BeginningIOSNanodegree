@@ -26,4 +26,4 @@ Done and dusted.
 
 > The student has correctly implemented the calculateFinalScore function.
 
-Roger that.
+Roger that. Well I think so. There are no test cases, so I have no idea.
