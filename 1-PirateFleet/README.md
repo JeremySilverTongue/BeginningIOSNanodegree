@@ -18,7 +18,7 @@ Done and done.
 
 > The student has created the Mine struct.
 
-Yep, though I had to modify the _Mine_ protocol. The properties were `(get set)`, which doesn't make sense if we're implimenting it with a struct.
+Yep, though I had to modify the `_Mine_` protocol. The properties were `(get set)`, which doesn't make sense if we're implimenting it with a struct.
 
 > The student has instantiated and added the two mines required to start a game.
 
