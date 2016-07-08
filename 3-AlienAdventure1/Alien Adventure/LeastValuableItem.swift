@@ -9,7 +9,19 @@
 extension Hero {
     
     func leastValuableItem(inventory: [UDItem]) -> UDItem? {
-        return nil
+        
+        var value = Int.max
+        var leastValuable:UDItem? = nil
+        
+        for item in inventory{
+            if item.baseValue < value{
+                value = item.baseValue
+                leastValuable = item
+            }
+        }
+        
+        
+        return leastValuable
     }
 }
 
