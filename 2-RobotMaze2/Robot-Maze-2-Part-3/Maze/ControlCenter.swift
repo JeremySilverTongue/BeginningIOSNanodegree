@@ -21,7 +21,7 @@ class ControlCenter {
         
         let isThreeWayJunction = (myWallInfo.numberOfWalls == 1)
         let isTwoWayPath = myWallInfo.numberOfWalls == 2
-        let isDeadEnd = myWallInfo.numberOfWalls == 1
+        let isDeadEnd = myWallInfo.numberOfWalls == 3
         
         if isThreeWayJunction {
             if robotIsBlocked{
