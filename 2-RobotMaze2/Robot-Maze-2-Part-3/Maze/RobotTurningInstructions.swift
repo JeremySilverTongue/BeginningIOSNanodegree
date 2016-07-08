@@ -32,8 +32,6 @@ extension ControlCenter {
     
     func turnTowardClearPath(robot: ComplexRobotObject, wallInfo: (up: Bool, right: Bool, down: Bool, left: Bool, numberOfWalls: Int)) {
         
-        // Step 3.1
-        // TODO: Tell the robot which way to turn toward the clear path. There are four cases where the robot should rotate to the right (the first two have been done for you--uncomment the code below). Write the remaining two cases where the robot should rotate to the right. For all other cases, the robot should rotate to the left.
         if robot.direction == .Left && wallInfo.down {
             robot.rotateRight()
         } else if robot.direction == .Up && wallInfo.left {

@@ -42,34 +42,26 @@ extension ControlCenter {
         var numberOfWalls = 0
         let cell = mazeController.currentCell(robot)
         
-        // Check is there is a wall at the top of the current cell
         let isWallUp = cell.top
         if isWallUp {
             numberOfWalls += 1
         }
-        
-        // Check if there is a wall to the right of the current cell
+
         let isWallRight = cell.right
         if isWallRight {
             numberOfWalls += 1
         }
-        // Step 2.1a
-        // TODO: Check if there is a wall at the bottom of the current cell
+
         let isWallDown = cell.bottom
         if isWallDown {
             numberOfWalls += 1
         }
-        // TODO: Check if there is a wall to the left of the current cell
+
         let isWallLeft = cell.left
         if isWallLeft {
             numberOfWalls += 1
         }
         
-        // Step 2.1b
-        // TODO: Test the checkWalls function.
-        
-        // TODO: Return a tuple representing the bools for top, right, down & left, and the number of walls
-        // This tuple is a placeholder
         return (isWallUp, isWallRight, isWallDown, isWallLeft, numberOfWalls)
     }
 }
