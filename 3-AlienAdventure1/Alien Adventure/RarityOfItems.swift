@@ -9,7 +9,29 @@
 extension Hero {
     
     func rarityOfItems(inventory: [UDItem]) -> [UDItemRarity:Int] {
-        return [UDItemRarity:Int]()
+        
+        var rarityCount : [UDItemRarity:Int] =
+            [UDItemRarity.Common : 0,
+             UDItemRarity.Uncommon : 0,
+             UDItemRarity.Rare : 0,
+             UDItemRarity.Legendary : 0,
+             ]
+    
+        
+        for item in inventory{
+            
+            let count = rarityCount[item.rarity]
+            if count != nil {
+                rarityCount[item.rarity] = count! + 1
+            } else {
+                rarityCount[item.rarity] = 1
+            }
+            
+
+        }
+        
+        
+        return rarityCount
     }
 }
 

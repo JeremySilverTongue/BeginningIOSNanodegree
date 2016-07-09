@@ -26,7 +26,7 @@ extension Hero {
             decrypted = [UInt8]()
             
             for character in encryptedString {
-decrypted.append(character ^ x)
+                decrypted.append(character ^ x)
                 // ADD CODE: perform decryption
                 print(character)
             }
