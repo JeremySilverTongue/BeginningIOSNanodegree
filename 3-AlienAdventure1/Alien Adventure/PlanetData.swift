@@ -10,6 +10,38 @@ import Foundation
 extension Hero {
     
     func planetData(dataFile: String) -> String {
+        
+        
+        
+        
+        let dataFileURL = NSBundle.mainBundle().URLForResource(dataFile, withExtension: "json")!
+        let data = NSData(contentsOfURL: dataFileURL)
+        do {
+            let json:NSArray = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSArray
+            
+            var mostInteresting = ""
+            var maxScore = 0
+            
+            for item in json {
+                let name:String = item["Name"] as! String
+                let common:Int = item["CommonItemsDetected"] as! Int
+                let uncommon:Int = item["UncommonItemsDetected"] as! Int
+                let rare:Int = item["RareItemsDetected"] as! Int
+                let legendary:Int = item["LegendaryItemsDetected"] as! Int
+                
+                let score = common + 2 * uncommon + 3 * rare + 4 * legendary;
+                
+                if (score > maxScore){
+                    maxScore = score
+                    mostInteresting = name
+                }
+                
+            }
+            return mostInteresting
+        } catch {
+            print("Failed to parse")
+        }
+        
         return ""
     }
 }

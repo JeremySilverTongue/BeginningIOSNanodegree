@@ -20,21 +20,16 @@ extension Hero {
         
         for x in UInt8.min..<UInt8.max {
             
-            print(x)
-            
             var decrypted: [UInt8]
             decrypted = [UInt8]()
             
             for character in encryptedString {
                 decrypted.append(character ^ x)
-                // ADD CODE: perform decryption
-                print(character)
             }
             
             if let decryptedString = String(bytes: decrypted,
                 encoding: NSUTF8StringEncoding) where decryptedString == "udacity" {
                 key = x
-                    // ADD CODE: found match, now what?
             }
         }
         
