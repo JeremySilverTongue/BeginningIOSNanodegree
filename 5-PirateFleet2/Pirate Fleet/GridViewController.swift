@@ -172,6 +172,7 @@ class GridViewController {
             return false
         }
         
+        debugPrint("Hit at location", x, y)
         gridView.grid[x][y].ship?.hitTracker.cellsHit[location] = true
         if let mine = gridView.grid[x][y].mine {
             gridView.markImageAtLocation(mine.location, image: Settings.Images.MineHit)
