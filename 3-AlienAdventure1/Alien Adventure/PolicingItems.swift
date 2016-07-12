@@ -9,7 +9,30 @@
 extension Hero {
     
     func policingItems(inventory: [UDItem], policingFilter: UDItem throws -> Void) -> [UDPolicingError:Int] {
-        return [UDPolicingError:Int]()
+        
+        var errors : [UDPolicingError:Int] = [
+            UDPolicingError.ItemFromCunia : 0,
+            UDPolicingError.NameContainsLaser : 0,
+            UDPolicingError.ValueLessThan10 : 0
+        ]
+        
+        
+        
+        for item in inventory{
+            do {
+                try policingFilter(item)
+            } catch UDPolicingError.ItemFromCunia{
+                errors[UDPolicingError.ItemFromCunia]! += 1
+            } catch UDPolicingError.NameContainsLaser{
+                errors[UDPolicingError.NameContainsLaser]! += 1
+            } catch UDPolicingError.ValueLessThan10{
+                errors[UDPolicingError.ValueLessThan10]! += 1
+            } catch let unknownError {
+                debugPrint("Unknown error: \(unknownError)")
+            }
+        }
+        
+        return errors
     }    
 }
 
