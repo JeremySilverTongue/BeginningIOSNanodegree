@@ -19,7 +19,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func displayLyrics(sender: AnyObject) {
-        lyricsView.text = lyricsForName(nameField.text!)
+        if !(nameField.text?.isEmpty)!{
+            lyricsView.text = lyricsForName(nameField.text!)
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
